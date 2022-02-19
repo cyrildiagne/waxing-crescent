@@ -1,0 +1,17 @@
+.DS_Store
+node_modules/
+dist/
+dist-zipped/
+dist-nft
+yarn.lock
+yarn-error.log
+.vercel
+.env
+
+docs/*
+model/mnist
+
+*.onnx
+public/ort-wasm-simd.wasm
+public/ort-wasm.wasm
+public/ort.min.js

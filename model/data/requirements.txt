@@ -1,0 +1,4 @@
+flickrapi
+numpy
+pillow
+tqdm
