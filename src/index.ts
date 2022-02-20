@@ -212,7 +212,7 @@ async function main() {
     setInterval(update, 1000 * 60 * 60)
 
     // Update now.
-    update()
+    await update()
 
     // Generate the full animation on 'v' press.
     window.addEventListener('keydown', async (e) => {
