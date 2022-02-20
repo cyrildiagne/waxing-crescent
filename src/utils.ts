@@ -1,16 +1,28 @@
-import gaussian from 'gaussian'
 const ndarray = require('ndarray')
 const ops = require('ndarray-ops')
 
 const fxrand: () => number = (window as any).fxrand
-type def = (n: number, fn: () => number) => number[]
-const gauss = gaussian(0, 1)
+
+function gaussian(mean = 0, std = 1) {
+  const u1 = fxrand()
+  const u2 = fxrand()
+  var z0 = Math.sqrt(-2.0 * Math.log(u1)) * Math.cos(Math.PI * 2 * u2)
+  return z0 * std + mean
+}
+
+function gaussianN(n: number, mean = 0, std = 1) {
+  const arr = []
+  for (let i = 0; i < n; i++) {
+    arr.push(gaussian(mean, std))
+  }
+  return arr
+}
 
 export const sleep = (s: number) => new Promise((r) => setTimeout(r, s))
 
 export const getRandomZ = (dims = [1, 128]): NdArray => {
   const ndims = dims.reduce((a, b) => a * b, 1)
-  const z = Float32Array.from((gauss.random as def)(ndims, fxrand))
+  const z = Float32Array.from(gaussianN(ndims))
   return ndarray(z, dims)
 }
 

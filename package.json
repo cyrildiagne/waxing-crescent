@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "@dhdbstjr98/gif.js": "^1.0.2",
-    "gaussian": "^1.2.0",
     "ndarray": "^1.0.19",
     "ndarray-ops": "^1.2.2",
     "onnxruntime-web": "^1.10.0"
