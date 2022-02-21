@@ -4,7 +4,7 @@
   "description": "☽ Waxing Crescent by Cyril Diagne, 2022",
   "main": "index.js",
   "author": "cyrildiagne",
-  "license": "All rights reserved",
+  "license": "cc-by-4.0",
   "scripts": {
     "prepare": "node post-install.js",
     "build": "webpack --config ./config/webpack.config.dist.js",
